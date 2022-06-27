@@ -318,10 +318,10 @@ public class Table implements Serializable {
 		rows = new ArrayList<Comparable[]>();
 
 		// Iterate through tuples
-		for (Map.Entry<KeyType, Comparable[]> e : index.entrySet())
+		for (Map.Entry<KeyType, Comparable[]> temp : index.entrySet())
 			// If key is in the table2 map then do not add to List
-			if (!table2.index.containsKey(e.getKey())) {
-				rows.add(e.getValue());
+			if (!table2.index.containsKey(temp.getKey())) {
+				rows.add(temp.getValue());
 			}
 		
 		return new Table(name + count++, attribute, domain, key, rows);
